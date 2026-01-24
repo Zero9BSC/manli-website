@@ -1,0 +1,35 @@
+---
+// Reemplazar con import de astro:assets cuando haya fotos reales. Ej: import img1 from '../assets/galeria/1.jpg';
+const placeholder = "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><rect fill="#e2e8f0" width="400" height="300"/><text fill="#64748b" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="14">Próximamente</text></svg>');
+const items = Array.from({ length: 6 }, (_, i) => ({
+  src: placeholder,
+  alt: `Trabajo de limpieza MANLI S.A.S. ${i + 1}`,
+}));
+---
+
+<section id="galeria" class="bg-slate-50 px-4 py-16 sm:py-24">
+  <div class="mx-auto max-w-6xl">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Galería</h2>
+      <p class="mt-4 text-lg text-slate-600">
+        Galería de trabajos realizados en edificios, instituciones y consorcios.
+      </p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3" role="list">
+      {items.map((item, i) => (
+        <article class="group aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md">
+          <img
+            src={item.src}
+            alt={item.alt}
+            width={400}
+            height={300}
+            class="h-full w-full object-cover transition group-hover:scale-105"
+            loading="lazy"
+            decoding="async"
+          />
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

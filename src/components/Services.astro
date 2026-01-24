@@ -1,0 +1,44 @@
+---
+const services = [
+  {
+    title: 'Limpieza en edificios',
+    desc: 'Mantenimiento y limpieza de áreas comunes, halls, escaleras y dependencias en edificios de viviendas y oficinas.',
+    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+  },
+  {
+    title: 'Limpieza en instituciones',
+    desc: 'Servicios para escuelas, hospitales, municipalidades, clubs y demás instituciones. Planes adaptados a cada necesidad.',
+    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+  },
+  {
+    title: 'Limpieza en consorcios',
+    desc: 'Mantenimiento regular de espacios comunes en consorcios: limpieza de pisos, vidrios, baños y zonas de circulación.',
+    icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+  },
+];
+---
+
+<section id="servicios" class="bg-white px-4 py-16 sm:py-24">
+  <div class="mx-auto max-w-6xl">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Servicios</h2>
+      <p class="mt-4 text-lg text-slate-600">
+        Limpieza en edificios, instituciones y consorcios. Soluciones a medida para empresas, instituciones y consumidores finales en Puerto Madryn y la región.
+      </p>
+    </div>
+
+    <ul class="mt-16 grid gap-8 md:grid-cols-3" role="list">
+      {services.map((s) => (
+        <li class="group rounded-2xl border border-slate-200 bg-slate-50/50 p-8 transition hover:border-manli-green-200 hover:bg-white hover:shadow-lg">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-manli-green-100 text-manli-green-600 transition group-hover:bg-manli-green-600 group-hover:text-white">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={s.icon} />
+            </svg>
+          </div>
+          <h3 class="mt-6 text-xl font-semibold text-slate-900">{s.title}</h3>
+          <p class="mt-3 text-slate-600">{s.desc}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

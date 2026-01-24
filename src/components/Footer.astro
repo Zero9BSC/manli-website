@@ -1,0 +1,41 @@
+---
+import SocialLinks from './SocialLinks.astro';
+const year = new Date().getFullYear();
+const navItems = [
+  { href: '#inicio', label: 'Inicio' },
+  { href: '#quienes-somos', label: 'Quiénes somos' },
+  { href: '#servicios', label: 'Servicios' },
+  { href: '#galeria', label: 'Galería' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#contacto', label: 'Contacto' },
+];
+---
+
+<footer class="border-t border-slate-200 bg-slate-900 px-4 py-12 text-white">
+  <div class="mx-auto max-w-6xl">
+    <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+      <div>
+        <a href="#inicio" class="text-xl font-bold tracking-tight">
+          MANLI <span class="text-manli-green-400">S.A.S.</span>
+        </a>
+        <p class="mt-2 max-w-sm text-slate-400">
+          Servicios de limpieza en edificios, instituciones y consorcios. Puerto Madryn, Chubut, Argentina.
+        </p>
+        <p class="mt-1 text-sm text-slate-500">Responsable: Pereda Fabiana Damaris</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <ul class="flex flex-wrap gap-x-6 gap-y-2" role="list">
+          {navItems.map(({ href, label }) => (
+            <li>
+              <a href={href} class="text-slate-400 transition hover:text-white">{label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+    <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row">
+      <p class="text-sm text-slate-500">© {year} MANLI S.A.S. Todos los derechos reservados.</p>
+      <SocialLinks class="text-slate-400" variant="dark" />
+    </div>
+  </div>
+</footer>

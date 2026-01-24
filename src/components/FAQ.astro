@@ -1,0 +1,55 @@
+---
+const faqs = [
+  {
+    q: '¿Qué zonas cubren?',
+    a: 'Trabajamos principalmente en Puerto Madryn y la zona de influencia. Consulte por otras localidades.',
+  },
+  {
+    q: '¿Cómo se contrata el servicio?',
+    a: 'Puede contactarnos por WhatsApp, teléfono o correo electrónico. Coordinamos una visita o reunión para evaluar el espacio y definir la frecuencia y tipo de limpieza.',
+  },
+  {
+    q: '¿Trabajan con instituciones y consorcios?',
+    a: 'Sí. Tenemos experiencia en limpieza de edificios, instituciones (escuelas, hospitales, etc.) y consorcios. Elaboramos presupuestos según las necesidades de cada cliente.',
+  },
+  {
+    q: '¿Ofrecen presupuesto sin compromiso?',
+    a: 'Sí. Puede solicitar un presupuesto por cualquiera de nuestros canales de contacto. Lo evaluamos y le respondemos a la brevedad.',
+  },
+  {
+    q: '¿Qué incluye el servicio?',
+    a: 'Depende del acuerdo: desde limpieza rutinaria de áreas comunes hasta limpieza profunda. Le detallamos las opciones al conocer su necesidad.',
+  },
+];
+---
+
+<section id="faq" class="bg-white px-4 py-16 sm:py-24">
+  <div class="mx-auto max-w-3xl">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Preguntas frecuentes</h2>
+      <p class="mt-4 text-lg text-slate-600">
+        Respuestas a las dudas más habituales.
+      </p>
+    </div>
+
+    <ul class="mt-16 space-y-4" role="list">
+      {faqs.map((faq, i) => (
+        <li class="rounded-xl border border-slate-200 bg-slate-50/50 transition hover:border-manli-green-200 hover:bg-white">
+          <details class="group">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-left font-semibold text-slate-900 [&::-webkit-details-marker]:hidden">
+              <span>{faq.q}</span>
+              <span class="shrink-0 transition group-open:rotate-180">
+                <svg class="h-5 w-5 text-manli-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="border-t border-slate-200 px-6 py-5 text-slate-600">
+              {faq.a}
+            </div>
+          </details>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

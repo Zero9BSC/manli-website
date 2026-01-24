@@ -1,0 +1,29 @@
+# Dependencias
+node_modules/
+
+# Build (Salida de producción)
+dist/
+
+# Archivos de caché de Astro y Vite
+.astro/
+.cache/
+.vite/
+
+# Variables de entorno (¡Muy importante para la seguridad!)
+.env
+.env.production
+.env.*
+
+# Logs de error
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de sistema de Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Configuración de Cursor/VS Code
+.vscode/
+.history/

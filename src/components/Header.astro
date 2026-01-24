@@ -1,0 +1,93 @@
+---
+const navItems = [
+  { href: '#inicio', label: 'Inicio' },
+  { href: '#quienes-somos', label: 'Quiénes somos' },
+  { href: '#servicios', label: 'Servicios' },
+  { href: '#galeria', label: 'Galería' },
+  { href: '#faq', label: 'Preguntas frecuentes' },
+  { href: '#contacto', label: 'Contacto' },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-sm">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8" aria-label="Principal">
+    <a href="#inicio" class="flex items-center transition hover:opacity-90">
+      <img src="/logo.svg" alt="MANLI S.A.S." class="h-8 w-auto" width="180" height="36" />
+    </a>
+
+    <!-- Desktop -->
+    <ul class="hidden gap-6 md:flex" role="list">
+      {navItems.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class="text-slate-600 transition hover:text-manli-green-600"
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Mobile menu toggle -->
+    <button
+      type="button"
+      id="menu-toggle"
+      class="inline-flex items-center justify-center rounded-lg p-2 text-slate-600 hover:bg-slate-100 md:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="sr-only">Abrir menú</span>
+      <svg class="h-6 w-6 menu-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg class="h-6 w-6 menu-close hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white md:hidden" role="dialog" aria-label="Menú móvil">
+    <ul class="flex flex-col gap-0 py-4" role="list">
+      {navItems.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class="block px-6 py-3 text-slate-600 hover:bg-slate-50 hover:text-manli-green-600"
+            data-close-menu
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const openIcon = toggle?.querySelector('.menu-open');
+  const closeIcon = toggle?.querySelector('.menu-close');
+
+  function openMenu() {
+    menu?.classList.remove('hidden');
+    toggle?.setAttribute('aria-expanded', 'true');
+    openIcon?.classList.add('hidden');
+    closeIcon?.classList.remove('hidden');
+  }
+
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    toggle?.setAttribute('aria-expanded', 'false');
+    openIcon?.classList.remove('hidden');
+    closeIcon?.classList.add('hidden');
+  }
+
+  toggle?.addEventListener('click', () => (menu?.classList.contains('hidden') ? openMenu() : closeMenu()));
+
+  document.querySelectorAll('[data-close-menu]').forEach((el) => {
+    el.addEventListener('click', closeMenu);
+  });
+</script>
