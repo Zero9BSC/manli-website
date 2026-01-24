@@ -9,4 +9,8 @@ export default defineConfig({
   image: {
     remotePatterns: [{ protocol: 'https' }],
   },
+  server: {
+    host: true,
+    allowedHosts: true,
+  },
 });
