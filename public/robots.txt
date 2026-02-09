@@ -1,0 +1,5 @@
+# MANLI S.A.S. — robots.txt para indexación
+User-agent: *
+Allow: /
+
+Sitemap: https://manlisas.com/sitemap-index.xml

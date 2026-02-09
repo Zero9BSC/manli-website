@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import Header from '../components/Header.astro';
-import WhatsAppButton from '../components/WhatsAppButton.astro';
 import Footer from '../components/Footer.astro';
 
 interface Props {
@@ -21,7 +20,12 @@ const { title, description = 'MANLI S.A.S. — Servicios de limpieza en edificio
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#0d9488" />
     <title>{title}</title>
+    <!-- Favicons (RealFaviconGenerator) -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
@@ -38,6 +42,5 @@ const { title, description = 'MANLI S.A.S. — Servicios de limpieza en edificio
       <slot />
     </main>
     <Footer />
-    <WhatsAppButton />
   </body>
 </html>

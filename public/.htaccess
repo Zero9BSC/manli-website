@@ -1,0 +1,35 @@
+# MANLI S.A.S. — Apache config (copiado a dist/ en el build)
+
+# Tipos MIME correctos para favicon y manifest
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType image/svg+xml .svg
+  AddType image/x-icon .ico
+</IfModule>
+
+# Comprimir texto (opcional, mejora rendimiento)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/json application/javascript application/manifest+json
+</IfModule>
+
+# Cache para assets estáticos (favicons, manifest, CSS, JS)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType application/manifest+json "access plus 1 week"
+</IfModule>
+
+# Redirigir HTTP a HTTPS (descomentar cuando el sitio use SSL)
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} off
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# Seguridad: no listar directorios
+Options -Indexes
+
+# Permitir enlaces simbólicos si se usan
+Options +FollowSymlinks

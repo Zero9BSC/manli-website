@@ -1,0 +1,25 @@
+{
+  "name": "MANLI S.A.S. — Servicios de limpieza",
+  "short_name": "MANLI S.A.S.",
+  "description": "Servicios de limpieza en edificios, instituciones y consorcios. Puerto Madryn, Chubut, Argentina.",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#0d9488",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "lang": "es-AR"
+}

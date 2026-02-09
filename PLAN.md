@@ -53,7 +53,6 @@
 | **FAQ** | `FAQ.astro` | Acordeón (isla React/Vue o HTML+details o Alpine; se elegirá ligero para performance) |
 | **Contact** | `Contact.astro` | Formulario + datos de contacto |
 | **Footer** | `Footer.astro` | Links, redes, copyright, datos abreviados |
-| **WhatsAppButton** | `WhatsAppButton.astro` | Botón flotante (href wa.me/542804601630) — isla mínima si hace falta animación |
 | **SocialLinks** | `SocialLinks.astro` | Iconos enlazando a redes corporativas (cuando se definan; placeholder href) |
 
 ---
@@ -62,8 +61,7 @@
 
 - **Teléfono:** 2804601630 (formato link: `tel:+542804601630`)  
 - **Email:** manlisas.001@gmail.com (mailto + formulario)  
-- **Ubicación:** Puerto Madryn, Chubut, Argentina (texto + opcional link a maps)  
-- **WhatsApp:** `https://wa.me/542804601630`
+- **Ubicación:** Puerto Madryn, Chubut, Argentina (texto + opcional link a maps)
 
 ---
 
@@ -73,7 +71,7 @@
 - **Segmentos:** PyMEs, instituciones, consumidor final.  
 - **Estrategia:**  
   - Carga rápida (HTML + CSS; JS solo en islas necesarias).  
-  - CTAs visibles (Hero, Contact, WhatsApp flotante).  
+  - CTAs visibles (Hero, Contact).  
   - Navegación por anclas suaves.  
   - Formulario simple (nombre, email, mensaje mínimo).
 
@@ -113,7 +111,6 @@ manli-website/
     │   ├── FAQ.astro
     │   ├── Contact.astro
     │   ├── Footer.astro
-    │   ├── WhatsAppButton.astro
     │   └── SocialLinks.astro
     ├── pages/
     │   └── index.astro
@@ -127,6 +124,6 @@ manli-website/
 1. Plan (este documento).  
 2. Proyecto Astro + Tailwind (`tailwind.config.mjs` con colores corporativos).  
 3. `Layout.astro` (meta, fuentes, estructura base).  
-4. Componentes en `/src/components/` (Header, Hero, About, Services, Gallery, FAQ, Contact, Footer, WhatsAppButton, SocialLinks).  
+4. Componentes en `/src/components/` (Header, Hero, About, Services, Gallery, FAQ, Contact, Footer, SocialLinks).  
 5. `index.astro` ensamblando todas las secciones.  
 6. Pruebas Lighthouse y ajustes finales.

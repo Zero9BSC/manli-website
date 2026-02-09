@@ -42,7 +42,7 @@ npm run preview
 ## Estructura
 
 - `src/layouts/Layout.astro` — Layout base
-- `src/components/` — Header, Hero, About, Services, Gallery, FAQ, Contact, Footer, WhatsAppButton, SocialLinks
+- `src/components/` — Header, Hero, About, Services, Gallery, FAQ, Contact, Footer, SocialLinks
 - `src/pages/index.astro` — Página de inicio
 
 Ver `PLAN.md` para el plan completo.
