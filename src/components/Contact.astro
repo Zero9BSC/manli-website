@@ -1,7 +1,7 @@
 ---
 // import SocialLinks from './SocialLinks.astro'; // Oculto hasta implementar redes (Facebook, Instagram, LinkedIn)
-const tel = '2804601630';
-const telLink = 'tel:+542804601630';
+// const tel = '2804601630'; // Oculto hasta implementar teléfono
+// const telLink = 'tel:+542804601630';
 const email = 'manlisas.001@gmail.com';
 const mapsQuery = encodeURIComponent('Puerto Madryn, Chubut, Argentina');
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
@@ -13,7 +13,7 @@ const formAction = 'https://formspree.io/f/xgoabzoo';
     <div class="mx-auto max-w-2xl text-center">
       <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Contacto</h2>
       <p class="mt-4 text-lg text-slate-600">
-        Envíenos su consulta por el formulario a manlisas.001@gmail.com o contáctenos por teléfono al 2804601630.
+        Envíenos su consulta por el formulario a manlisas.001@gmail.com.
       </p>
     </div>
 
@@ -70,7 +70,7 @@ const formAction = 'https://formspree.io/f/xgoabzoo';
             ></textarea>
           </div>
           <div id="contact-form-error" class="hidden rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700" role="alert">
-            Hubo un error al enviar. Por favor intente de nuevo o contáctenos por teléfono o correo.
+            Hubo un error al enviar. Por favor intente de nuevo o contáctenos por correo.
           </div>
           <div>
             <button
@@ -100,6 +100,7 @@ const formAction = 'https://formspree.io/f/xgoabzoo';
                 <a href={`mailto:${email}`} class="text-manli-green-600 hover:underline">{email}</a>
               </div>
             </li>
+            <!-- Teléfono oculto hasta implementar
             <li class="flex items-start gap-4">
               <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-manli-green-100 text-manli-green-600">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,6 +112,7 @@ const formAction = 'https://formspree.io/f/xgoabzoo';
                 <a href={telLink} class="text-manli-green-600 hover:underline">{tel}</a>
               </div>
             </li>
+            -->
             <li class="flex items-start gap-4">
               <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-manli-blue-100 text-manli-blue-600">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -163,7 +165,7 @@ const formAction = 'https://formspree.io/f/xgoabzoo';
       }
     } catch {
       if (errorEl) {
-        errorEl.textContent = 'Hubo un error al enviar. Por favor intente de nuevo o contáctenos por teléfono o correo.';
+        errorEl.textContent = 'Hubo un error al enviar. Por favor intente de nuevo o contáctenos por correo.';
         errorEl.classList.remove('hidden');
       }
     } finally {
